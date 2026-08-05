@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-theme="dark" style="color-scheme: dark;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111315" />
+  <meta name="description" content="VoltDrive EV charging driver application prototype" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <title>VoltDrive Driver Prototype</title>
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to application</a>
+  <div id="app" role="main" aria-live="off" aria-busy="true"></div>
+  <div id="app-live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <script type="module" src="src/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>

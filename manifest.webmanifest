@@ -1,0 +1,10 @@
+{
+  "name": "VoltDrive Driver Prototype",
+  "short_name": "VoltDrive",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0b0d",
+  "theme_color": "#111315",
+  "description": "Interactive EV charging driver application prototype",
+  "icons": []
+}

@@ -204,6 +204,12 @@ h1 { margin:4px 0 0; font-family:"Space Grotesk"; font-size:20px; }
 
 /* Account completion components — v14 */
 .ui-list-main{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;flex:1;text-align:left;background:none;border:0;color:inherit;padding:0;min-width:0}
+/* Vehicle Garage row: two direct children only — vehicle button + edit button.
+   Keep the global .ui-list-item grid untouched for the rest of the app. */
+.garage-vehicle-row,
+.ui-list-item:has(> .ui-list-main[data-set-active-vehicle]){display:flex;align-items:center;gap:10px}
+.garage-vehicle-row>.ui-list-main,
+.ui-list-item:has(> .ui-list-main[data-set-active-vehicle])>.ui-list-main{flex:1 1 auto;width:100%;min-width:0}
 .profile-editor{display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 0 18px}.profile-avatar--large{width:76px;height:76px;font-size:22px}
 .info-note{border-style:dashed}.info-note p{margin:6px 0 0;color:var(--muted)}
 .ui-segment-grid--three{grid-template-columns:repeat(3,1fr)}
@@ -1134,3 +1140,15 @@ button[aria-pressed="true"] { border-color: rgba(245, 245, 247, .35); }
 @media (max-width: 350px) {
   .connection-banner { margin-inline: 10px; }
 }
+
+/* Stage 13 — Stations-only polish. Keep existing global UI components untouched. */
+.map-recent-row{display:flex;align-items:center;gap:8px;margin:8px 0 10px;min-width:0}
+.map-recent-row>small{flex:0 0 auto;color:var(--text-secondary);font-size:9px}
+.map-recent-row>.filter-row{flex:1 1 auto;min-width:0;margin:0}
+.map-recent-row>.ui-text-button{flex:0 0 auto}
+.station-visit-list{display:grid;gap:0;margin-top:10px}
+.station-visit-list>div{padding:11px 0;border-top:1px solid var(--border)}
+.station-visit-list>div:first-child{border-top:0;padding-top:2px}
+.station-visit-list small,.station-visit-list strong{display:block}
+.station-visit-list small{color:var(--text-secondary);font-size:9px;margin-bottom:4px}
+.station-visit-list strong{font-size:10px;line-height:1.5;font-weight:600}
